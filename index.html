@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Grid | Modern Data Platforms & Generative BI for Law Firms</title>
+  <meta name="description" content="Modern Data Platform migrations to Databricks, Microsoft Fabric, and Snowflake. Tabular modeling, custom Power BI dashboards, and Medallion architecture for enterprise law firms. Unify Aderant, Elite 3E, Fulcrum, and iManage.">
+  <meta name="keywords" content="legal analytics, law firm business intelligence, modern data platforms, Databricks legal, Snowflake law firm, Azure Fabric, Medallion architecture legal, Power BI Tabular modeling, Aderant integration, Elite 3E, Fulcrum legal">
+  <meta name="author" content="Creative Grid">
+  
+  <!-- Favicon using clean data-URL SVG representing a grid of data nodes -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020617'/%3E%3Cpath d='M30 30h10v10H30zm20 0h20v10H50zM30 50h20v10H30zm30 0h10v10H60zM30 70h40v10H30z' fill='%2306b6d4'/%3E%3Ccircle cx='70' cy='35' r='5' fill='%238b5cf6'/%3E%3Ccircle cx='65' cy='55' r='5' fill='%2310b981'/%3E%3C/svg%3E">
+  
+  <!-- Font preloads and stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Creative Grid | Modern Data Platforms & Generative BI for Law Firms">
+  <meta property="og:description" content="Secure, Azure-native data foundations and conversational BI built to unlock billing, practice management, and document insights for enterprise law firms.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Creative Grid">
+  
+  <!-- Structured Schema Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Creative Grid",
+    "legalName": "Creative Grid Consulting",
+    "description": "Enterprise-grade Modern Data Platforms and custom BI solutions tailored specifically for law firms, enabling AI-ready data ingestion, practice analytics, and secure client-matter intelligence environments.",
+    "url": "https://creativegrid.com",
+    "knowsAbout": [
+      "legal analytics",
+      "Modern Data Platforms for law firms",
+      "Databricks, Snowflake, and Microsoft Fabric migration",
+      "Medallion data architecture (Bronze, Silver, Gold)",
+      "Power BI and Tabular semantic modeling",
+      "Aderant, Elite 3E, and Fulcrum billing integration",
+      "Generative BI and legal LLMs",
+      "iManage and NetDocuments semantic search"
+    ],
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Global"
+    }
+  }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- Glow Background Accents -->
+  <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-[30%] -left-[10%] w-[60%] aspect-square bg-cyan-900/10 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-[30%] -right-[10%] w-[60%] aspect-square bg-purple-900/10 rounded-full blur-[120px]"></div>
+    <div class="absolute top-[40%] left-[60%] w-[40%] aspect-square bg-emerald-900/5 rounded-full blur-[100px]"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent backdrop-blur-none py-5" id="site-header">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group text-decoration-none" id="brand-logo">
+        <div class="relative w-10 h-10 flex items-center justify-center bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group-hover:border-cyan-500/50 transition-colors duration-300">
+          <!-- Geometric Grid Icon -->
+          <div class="absolute inset-0 grid grid-cols-3 grid-rows-3 p-2.5 gap-1">
+            <div class="bg-slate-700 rounded-[1px] group-hover:bg-cyan-500/70 transition-colors duration-300"></div>
+            <div class="bg-slate-700 rounded-[1px] group-hover:bg-cyan-500/70 transition-colors duration-300 delay-75"></div>
+            <div class="bg-purple-500/60 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px] group-hover:bg-cyan-500/70 transition-colors duration-300 delay-100"></div>
+            <div class="bg-emerald-500/60 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px] group-hover:bg-cyan-500/70 transition-colors duration-300"></div>
+            <div class="bg-slate-700 rounded-[1px] group-hover:bg-cyan-500/70 transition-colors duration-300"></div>
+            <div class="bg-slate-700 rounded-[1px] group-hover:bg-cyan-500/70 transition-colors duration-300"></div>
+            <div class="bg-slate-700 rounded-[1px] group-hover:bg-cyan-500/70 transition-colors duration-300"></div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-outfit font-bold text-xl tracking-tight text-white group-hover:text-cyan-400 transition-colors duration-300">Creative Grid</span>
+          <span class="font-inter text-[10px] uppercase tracking-[0.2em] text-slate-400">Legal Data Intelligence</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
+        <a href="#platform" class="nav-link">Platform</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#interactive-demo" class="nav-link">GenBI Demo</a>
+        <a href="#calculator" class="nav-link">ROI Calculator</a>
+        <a href="#security" class="nav-link">Security & Trust</a>
+        <a href="#contact" class="nav-link-cta ml-4">Book Workshop</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-slate-400 hover:text-white p-2 focus:outline-none" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="hidden fixed inset-0 top-[73px] bg-slate-950/95 backdrop-blur-lg z-45 flex-col p-8 gap-6 border-t border-slate-900 transition-all duration-300" id="mobile-nav">
+      <a href="#platform" class="mobile-nav-link">Platform</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#interactive-demo" class="mobile-nav-link">GenBI Demo</a>
+      <a href="#calculator" class="mobile-nav-link">ROI Calculator</a>
+      <a href="#security" class="mobile-nav-link">Security & Trust</a>
+      <a href="#contact" class="mobile-nav-link button-cta-mobile mt-4 text-center">Book Workshop</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden z-10" id="hero">
+    <!-- Grid pattern background overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35"></div>
+    
+    <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center w-full">
+      <!-- Hero Text -->
+      <div class="md:col-span-7 flex flex-col items-start text-left z-20">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-950/40 border border-cyan-800/50 rounded-full mb-6 animate-pulse">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          <span class="font-inter text-xs font-semibold text-cyan-300 uppercase tracking-wider">Enterprise Legal Data Platforms</span>
+        </div>
+        <h1 class="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-[1.1] mb-6">
+          The Modern Data <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Platform</span> Built for Law Firms.
+        </h1>
+        <p class="font-inter text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed mb-8">
+          Unify billing, practice management, and document workflows into a secure, Medallion-structured lakehouse on Databricks, Fabric, or Snowflake. Eliminate the analyst bottleneck and make data instantly queryable.
+        </p>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+          <a href="#interactive-demo" class="button-primary text-center">Try Conversational BI</a>
+          <a href="#calculator" class="button-secondary text-center">Calculate Estimated ROI</a>
+        </div>
+      </div>
+
+      <!-- Hero Visuals (glowing nodes connected by streams) -->
+      <div class="md:col-span-5 relative w-full h-[320px] sm:h-[400px] flex items-center justify-center z-10" id="hero-visual">
+        <div class="absolute w-64 h-64 bg-purple-500/10 rounded-full blur-[80px] -z-10 animate-pulse"></div>
+        <div class="relative w-full h-full border border-slate-800/80 bg-slate-900/40 backdrop-blur-md rounded-2xl p-6 overflow-hidden flex flex-col justify-between shadow-2xl">
+          
+          <!-- Cyber Grid Node Network Visual -->
+          <div class="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none">
+            <!-- Node Labels & Active Connections (Static layout, animated via CSS) -->
+            <div class="flex justify-between items-start">
+              <div class="node-badge" id="node-billing">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Billing System (Elite 3E/Fulcrum)</span>
+              </div>
+              <div class="node-badge" id="node-docs">
+                <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                <span>DMS (iManage)</span>
+              </div>
+            </div>
+            
+            <div class="relative w-full h-24 flex items-center justify-center">
+              <!-- Central Hub -->
+              <div class="relative w-16 h-16 rounded-2xl bg-slate-950 border-2 border-cyan-500/50 flex items-center justify-center shadow-lg shadow-cyan-500/20 z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-cyan-400 animate-spin-slow">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
+                </svg>
+                <!-- Pulsing outer ring -->
+                <div class="absolute inset-0 rounded-2xl border border-cyan-400 animate-ping opacity-40"></div>
+              </div>
+              
+              <!-- Data streams svg overlay -->
+              <svg class="absolute inset-0 w-full h-full stroke-slate-800 fill-none" style="z-index: 10;">
+                <path d="M 50,0 Q 150,50 150,50" class="stream-line-emerald"></path>
+                <path d="M 270,0 Q 150,50 150,50" class="stream-line-purple"></path>
+                <path d="M 50,100 Q 150,50 150,50" class="stream-line-cyan"></path>
+              </svg>
+            </div>
+            
+            <div class="flex justify-between items-end">
+              <div class="node-badge" id="node-pms">
+                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                <span>PMS (Aderant/Clio)</span>
+              </div>
+              <div class="node-badge" id="node-out">
+                <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+                <span>Azure Fabric (Lakehouse)</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mini analytics card dashboard display -->
+          <div class="mt-auto bg-slate-950/80 border border-slate-800/80 rounded-xl p-3.5 flex items-center justify-between z-20">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                </svg>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] uppercase text-slate-400 tracking-wider">Firmwide Realization</span>
+                <span class="font-outfit font-bold text-base text-white">+4.2% acceleration</span>
+              </div>
+            </div>
+            <div class="text-[11px] text-emerald-400 bg-emerald-950/30 border border-emerald-800/30 px-2 py-0.5 rounded-full font-semibold">
+              Live Monitoring
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Capabilities / Section 1 -->
+  <section class="py-24 px-6 border-t border-slate-900 relative z-10" id="platform">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mb-4">
+        Unifying the Legal Technology Ecosystem
+      </h2>
+      <p class="font-inter text-slate-400 max-w-2xl mx-auto">
+        Law firm data is traditionally locked inside fragmented, proprietary legacy systems. Creative Grid connects these silos into a singular, high-performance Azure Lakehouse, ensuring data is unified and clean.
+      </p>
+    </div>
+
+    <!-- Target Systems Grid -->
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-4 mb-16">
+      <div class="system-card">
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Practice Management</span>
+        <span class="system-title">Aderant</span>
+      </div>
+      <div class="system-card">
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Practice Management</span>
+        <span class="system-title">Elite 3E</span>
+      </div>
+      <div class="system-card">
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Enterprise ERP & RCM</span>
+        <span class="system-title">Fulcrum</span>
+      </div>
+      <div class="system-card">
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Boutique PMS</span>
+        <span class="system-title">Clio</span>
+      </div>
+      <div class="system-card">
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Document Management</span>
+        <span class="system-title">iManage</span>
+      </div>
+      <div class="system-card">
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Document Management</span>
+        <span class="system-title">NetDocuments</span>
+      </div>
+    </div>
+
+    <!-- Platform Features Grid -->
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="feature-card">
+        <div class="feature-icon bg-cyan-500/10 text-cyan-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
+          </svg>
+        </div>
+        <h3 class="font-outfit font-bold text-xl text-white mb-3">Unified Lakehouse Ingestion</h3>
+        <p class="font-inter text-slate-400 text-sm leading-relaxed">
+          Automated ELT pipelines ingest data continuously from relational billing databases, cloud APIs, and legal document storage. No more manual exports.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon bg-purple-500/10 text-purple-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+          </svg>
+        </div>
+        <h3 class="font-outfit font-bold text-xl text-white mb-3">Self-Healing Data Quality</h3>
+        <p class="font-inter text-slate-400 text-sm leading-relaxed">
+          Integrated validation scripts identify data anomalies (e.g. wrong client codes or miscalculated discounts) automatically, resolving error loops before reports run.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon bg-emerald-500/10 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7C4.547 9.547 4.5 10.768 4.5 12s.047 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.092-1.209.138-2.43.138-3.662Z" />
+          </svg>
+        </div>
+        <h3 class="font-outfit font-bold text-xl text-white mb-3">Cloud Lakehouse Native</h3>
+        <p class="font-inter text-slate-400 text-sm leading-relaxed">
+          Fully native designs. Migrate and deploy workloads across Microsoft Fabric, Databricks, and Snowflake, scaling processing dynamically and reducing cloud costs by up to 40%.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Conversational BI Simulator / Section 2 -->
+  <section class="py-24 px-6 bg-slate-950/40 relative z-10" id="interactive-demo">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Info Column -->
+      <div class="lg:col-span-5 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-purple-950/40 border border-purple-800/50 rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+          <span class="font-inter text-xs font-semibold text-purple-300 uppercase tracking-wider">Generative BI Interface</span>
+        </div>
+        <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mb-6">
+          Generative Analytics: Answer in Seconds, Not Cycles
+        </h2>
+        <p class="font-inter text-slate-300 mb-6 leading-relaxed">
+          Ditch static, complex spreadsheets. Enable your managing partners, practice group heads, and billing attorneys to query data using plain language. 
+        </p>
+        <p class="font-inter text-slate-400 mb-8 text-sm leading-relaxed">
+          Select a sample question in our simulator on the right to see how the platform automatically connects billing databases, calculates metrics, and draws instant dashboards with narrative analysis.
+        </p>
+        
+        <!-- Question selector buttons -->
+        <div class="flex flex-col gap-3 w-full" id="chat-queries-container">
+          <button class="query-selector-btn active" data-query-index="0" id="btn-query-0">
+            “Show practice group realization rate vs target this year.”
+          </button>
+          <button class="query-selector-btn" data-query-index="1" id="btn-query-1">
+            “Explain the leakage in our billing cycle for Litigation.”
+          </button>
+          <button class="query-selector-btn" data-query-index="2" id="btn-query-2">
+            “Which clients have the highest outstanding WIP vs aging AR?”
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulator Column -->
+      <div class="lg:col-span-7 w-full">
+        <div class="terminal-container">
+          <!-- Terminal Title bar -->
+          <div class="terminal-header">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+            </div>
+            <span class="text-xs text-slate-500 font-mono">creative-grid-bi.client-portal</span>
+            <div class="w-4"></div>
+          </div>
+          
+          <!-- Terminal Body / Chat Output -->
+          <div class="terminal-body" id="terminal-chat-body">
+            <!-- Messages will be dynamically rendered here via Javascript -->
+          </div>
+          
+          <!-- Terminal Input bar -->
+          <div class="terminal-footer">
+            <span class="text-purple-400 font-mono font-bold mr-2">&gt;</span>
+            <div class="text-slate-400 text-sm font-mono overflow-hidden text-ellipsis whitespace-nowrap w-full" id="terminal-input-display">
+              Select a question to run query...
+            </div>
+            <span class="terminal-cursor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creative Grid Services / Section 3 -->
+  <section class="py-24 px-6 border-t border-slate-900 relative z-10" id="services">
+    <div class="max-w-7xl mx-auto text-center mb-20">
+      <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mb-4">
+        Specialist Capabilities for Legal Operations
+      </h2>
+      <p class="font-inter text-slate-400 max-w-2xl mx-auto">
+        We specialize exclusively in the legal vertical, tailoring every data pipeline to match the regulatory, financial, and relational needs of modern firms.
+      </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Service 1 -->
+      <div class="service-pill-card">
+        <div class="service-number">01</div>
+        <h3 class="font-outfit font-bold text-xl text-white mb-4">Modern Platform Engineering</h3>
+        <p class="font-inter text-slate-400 text-sm leading-relaxed mb-6">
+          Architecting robust Medallion data structures (Bronze, Silver, Gold) across Databricks, Snowflake, and Fabric inside your private cloud subscription.
+        </p>
+        <ul class="service-sub-list">
+          <li>Databricks, Fabric, Snowflake migration</li>
+          <li>Medallion (Bronze/Silver/Gold) pipelines</li>
+          <li>Zero-Trust ingestion & mapping</li>
+        </ul>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-pill-card">
+        <div class="service-number text-purple-400 border-purple-500/30">02</div>
+        <h3 class="font-outfit font-bold text-xl text-white mb-4">Revenue Cycle Dashboards</h3>
+        <p class="font-inter text-slate-400 text-sm leading-relaxed mb-6">
+          Unlocking billing visibility. Track realization, utilization, WIP, and AR using custom Tabular modeling and high-performance Power BI semantic layers.
+        </p>
+        <ul class="service-sub-list">
+          <li>Power BI & Tabular semantic modeling</li>
+          <li>Fee earner realization metrics</li>
+          <li>WIP and Aging AR models</li>
+        </ul>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-pill-card">
+        <div class="service-number text-emerald-400 border-emerald-500/30">03</div>
+        <h3 class="font-outfit font-bold text-xl text-white mb-4">Generative AI Enablement</h3>
+        <p class="font-inter text-slate-400 text-sm leading-relaxed mb-6">
+          Deploying private legal LLM layers to query practice databases, summarize dockets, and enable semantic lookup across document ecosystems.
+        </p>
+        <ul class="service-sub-list">
+          <li>Conversational analytics</li>
+          <li>Secure Azure OpenAI wrappers</li>
+          <li>UniCourt API ingestion</li>
+        </ul>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-pill-card">
+        <div class="service-number text-cyan-400 border-cyan-500/30">04</div>
+        <h3 class="font-outfit font-bold text-xl text-white mb-4">Secure Systems Migration</h3>
+        <p class="font-inter text-slate-400 text-sm leading-relaxed mb-6">
+          Seamlessly translating legacy PMS databases to modern formats. Completely mapped, tested, and executed with zero business disruption.
+        </p>
+        <ul class="service-sub-list">
+          <li>PMS-to-PMS transitions</li>
+          <li>Data integrity validation</li>
+          <li>Historical data preservation</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive ROI Calculator / Section 4 -->
+  <section class="py-24 px-6 border-t border-slate-900 bg-slate-950/20 relative z-10" id="calculator">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Calculator Content Description -->
+      <div class="lg:col-span-5 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/40 border border-emerald-800/50 rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span class="font-inter text-xs font-semibold text-emerald-300 uppercase tracking-wider">Financial ROI Estimator</span>
+        </div>
+        <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mb-6">
+          Quantify the Value of Unified Data
+        </h2>
+        <p class="font-inter text-slate-300 mb-6 leading-relaxed">
+          Fragmented data costs law firms millions in manual administration, slow reporting cycles, and uncaptured billable hours. 
+        </p>
+        <p class="font-inter text-slate-400 mb-6 text-sm leading-relaxed">
+          Use the calculator to estimate how much revenue leakage can be recovered by providing your attorneys with unified dashboards and reducing manual reporting administration.
+        </p>
+        <div class="border-t border-slate-800/80 pt-6">
+          <span class="text-xs uppercase text-slate-500 block mb-2 font-semibold">Key Metrics Restored</span>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <span class="text-cyan-400 font-outfit font-bold text-xl">~4 hrs</span>
+              <span class="text-xs text-slate-400 block">Saved per attorney weekly</span>
+            </div>
+            <div>
+              <span class="text-emerald-400 font-outfit font-bold text-xl">1.5 - 3%</span>
+              <span class="text-xs text-slate-400 block">Realization rate recovery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Form & Output Card -->
+      <div class="lg:col-span-7 w-full">
+        <div class="calculator-container bg-slate-900/60 border border-slate-800/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-2xl">
+          <div class="grid sm:grid-cols-2 gap-8">
+            <!-- Inputs Column -->
+            <div class="flex flex-col gap-6">
+              <h3 class="font-outfit font-bold text-lg text-white border-b border-slate-800 pb-3">Firm Inputs</h3>
+              
+              <!-- Input: Number of attorneys -->
+              <div class="flex flex-col">
+                <label for="input-attorneys" class="text-xs text-slate-400 mb-2 font-medium">Number of Attorneys</label>
+                <div class="relative">
+                  <input type="number" id="input-attorneys" class="calc-input" value="75" min="5" max="1000" aria-describedby="attorneys-help">
+                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-mono">FTE</span>
+                </div>
+                <span id="attorneys-help" class="sr-only">Enter the number of full-time equivalent attorneys in the firm.</span>
+              </div>
+
+              <!-- Input: Average billing rate -->
+              <div class="flex flex-col">
+                <label for="input-rate" class="text-xs text-slate-400 mb-2 font-medium">Average Hourly Rate ($)</label>
+                <div class="relative">
+                  <input type="number" id="input-rate" class="calc-input" value="450" min="100" max="2000" aria-describedby="rate-help">
+                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-mono">/ hour</span>
+                </div>
+                <span id="rate-help" class="sr-only">Enter the average hourly rate charged by the firm.</span>
+              </div>
+
+              <!-- Input: Manual admin time -->
+              <div class="flex flex-col">
+                <label for="input-admin-hours" class="text-xs text-slate-400 mb-2 font-medium">Weekly Manual Admin Time (per Attorney)</label>
+                <div class="relative">
+                  <input type="number" id="input-admin-hours" class="calc-input" value="3.5" min="0.5" max="20" step="0.5" aria-describedby="admin-hours-help">
+                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-mono">hours</span>
+                </div>
+                <span id="admin-hours-help" class="sr-only">Hours per week each attorney spends on manual reporting, status lookups, or uncaptured billing.</span>
+              </div>
+            </div>
+
+            <!-- Outputs Column -->
+            <div class="flex flex-col justify-between bg-slate-950/70 border border-slate-800/80 rounded-xl p-6 text-left">
+              <div class="flex flex-col gap-6">
+                <h3 class="font-outfit font-bold text-lg text-white border-b border-slate-800 pb-3">Estimated Annual Recovery</h3>
+                
+                <!-- Output block 1: Hours Recovered -->
+                <div>
+                  <span class="text-xs text-slate-500 block uppercase tracking-wider mb-1">Total Billable Hours Recovered</span>
+                  <div class="flex items-baseline gap-2">
+                    <span class="font-outfit font-bold text-3xl text-cyan-400" id="output-hours-recovered">10,800</span>
+                    <span class="text-xs text-slate-400">hours / year</span>
+                  </div>
+                </div>
+
+                <!-- Output block 2: Revenue Impact -->
+                <div>
+                  <span class="text-xs text-slate-500 block uppercase tracking-wider mb-1">Recovered Revenue Opportunity</span>
+                  <div class="flex items-baseline gap-2">
+                    <span class="font-outfit font-bold text-3xl text-emerald-400" id="output-revenue-recovered">$4,860,000</span>
+                    <span class="text-xs text-slate-400">/ year</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-4 border-t border-slate-800/80">
+                <p class="text-[11px] text-slate-400 leading-normal">
+                  *Estimates are based on recovering 80% of manual administration time through automated pipelines, practice dashboards, and custom semantic search.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Trust Pillar / Section 5 -->
+  <section class="py-24 px-6 border-t border-slate-900 relative z-10" id="security">
+    <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+      <div class="w-16 h-16 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+        </svg>
+      </div>
+      <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mb-6">
+        Ironclad Compliance. Deployed in Your Azure Tenant.
+      </h2>
+      <p class="font-inter text-slate-300 max-w-3xl leading-relaxed mb-12">
+        We respect the strict constraints of client confidentiality. Creative Grid never copies or transfers your data to an external server. The entire Modern Data Platform, including AI endpoints, is deployed <strong class="text-cyan-400">natively inside your firm’s private Microsoft Azure subscription</strong>.
+      </p>
+
+      <div class="grid sm:grid-cols-3 gap-8 w-full max-w-5xl">
+        <div class="p-6 border border-slate-900 bg-slate-950/40 rounded-xl text-left">
+          <h3 class="font-outfit font-bold text-lg text-white mb-2">Ethical Wall Compliance</h3>
+          <p class="font-inter text-slate-400 text-xs leading-relaxed">
+            Data security partitions are enforced at the pipeline level, ensuring practice-specific document libraries and matters respect existing logical ethical walls.
+          </p>
+        </div>
+        <div class="p-6 border border-slate-900 bg-slate-950/40 rounded-xl text-left">
+          <h3 class="font-outfit font-bold text-lg text-white mb-2">SOC2 & HIPAA Compliant</h3>
+          <p class="font-inter text-slate-400 text-xs leading-relaxed">
+            Every implementation utilizes industry-best Azure landing zones, full encryptions (in-transit & at-rest), and detailed auditing templates for regulatory approval.
+          </p>
+        </div>
+        <div class="p-6 border border-slate-900 bg-slate-950/40 rounded-xl text-left">
+          <h3 class="font-outfit font-bold text-lg text-white mb-2">Zero Model Leakage</h3>
+          <p class="font-inter text-slate-400 text-xs leading-relaxed">
+            Your conversational BI uses secure Azure OpenAI instances. Your intellectual property, contract templates, and billing details are never used to train public models.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & CTA / Section 6 -->
+  <section class="py-24 px-6 border-t border-slate-900 relative z-10" id="contact">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mb-4">
+        Ready to Unify Your Firm’s Data?
+      </h2>
+      <p class="font-inter text-slate-400 mb-12">
+        Schedule a diagnostic call to map your current data structures (Aderant, Elite 3E, Fulcrum, etc.) and explore your path to an Azure Modern Data Platform.
+      </p>
+
+      <!-- Glassmorphic Form -->
+      <form id="contact-form" class="bg-slate-900/40 border border-slate-800/80 backdrop-blur-md rounded-2xl p-8 text-left shadow-2xl flex flex-col gap-6 relative">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <!-- Full Name -->
+          <div class="flex flex-col">
+            <label for="contact-name" class="text-xs text-slate-400 mb-2 font-medium">Full Name</label>
+            <input type="text" id="contact-name" required class="form-input" placeholder="e.g. Sarah Jenkins">
+          </div>
+          <!-- Professional Email -->
+          <div class="flex flex-col">
+            <label for="contact-email" class="text-xs text-slate-400 mb-2 font-medium">Work Email</label>
+            <input type="email" id="contact-email" required class="form-input" placeholder="e.g. sjenkins@lawfirm.com">
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <!-- Firm Name -->
+          <div class="flex flex-col">
+            <label for="contact-firm" class="text-xs text-slate-400 mb-2 font-medium">Firm Name</label>
+            <input type="text" id="contact-firm" required class="form-input" placeholder="e.g. Apex Legal LLP">
+          </div>
+          <!-- Primary Practice Management System -->
+          <div class="flex flex-col">
+            <label for="contact-pms" class="text-xs text-slate-400 mb-2 font-medium">Current Billing / PMS System</label>
+            <select id="contact-pms" class="form-input text-slate-300">
+              <option value="Elite 3E">Elite 3E</option>
+              <option value="Aderant">Aderant</option>
+              <option value="Fulcrum">Fulcrum (SAP)</option>
+              <option value="Clio">Clio</option>
+              <option value="Other">Other / Multiple</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Notes / Message -->
+        <div class="flex flex-col">
+          <label for="contact-message" class="text-xs text-slate-400 mb-2 font-medium">How can we help your firm?</label>
+          <textarea id="contact-message" rows="4" class="form-input resize-none" placeholder="Briefly describe your data objectives or legacy system challenges..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="button-primary-submit w-full mt-2" id="submit-btn">
+          Request Diagnostic Workshop
+        </button>
+
+        <!-- Response Alert Container -->
+        <div id="form-alert" class="hidden rounded-lg p-4 text-sm mt-4"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-slate-900 relative z-10 bg-slate-950">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <!-- Logo -->
+        <div class="w-8 h-8 flex items-center justify-center bg-slate-900 border border-slate-800 rounded-lg">
+          <div class="grid grid-cols-3 grid-rows-3 p-1.5 gap-0.5 w-full h-full">
+            <div class="bg-cyan-500 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px]"></div>
+            <div class="bg-purple-500 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px]"></div>
+            <div class="bg-slate-700 rounded-[1px]"></div>
+            <div class="bg-emerald-500 rounded-[1px]"></div>
+          </div>
+        </div>
+        <span class="font-outfit font-bold text-base text-white">Creative Grid</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-slate-500">
+        <span>&copy; 2026 Creative Grid Consulting. All rights reserved.</span>
+        <a href="#security" class="hover:text-slate-300">Privacy Policy</a>
+        <a href="#platform" class="hover:text-slate-300">Azure Architectures</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
