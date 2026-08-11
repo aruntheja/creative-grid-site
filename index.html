@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1.0.4">
+  <link rel="stylesheet" href="style.css?v=1.0.5">
   
   <!-- OpenGraph Metadata -->
   <meta property="og:title" content="Creative Grid | Modern Data Platform Integration for Law Firms">
@@ -114,7 +114,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden z-10" id="hero">
+  <section class="relative min-h-screen px-6 overflow-hidden z-10" id="hero">
     <!-- Grid pattern background overlay -->
     <div class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35"></div>
     
@@ -201,7 +201,7 @@
             </div>
 
             <!-- Middle Canvas: Ingestion streams drawing lines -->
-            <svg class="absolute inset-0 w-full h-full stroke-slate-800 fill-none pointer-events-none" style="z-index: 10;">
+            <svg class="ingestion-svg-lines absolute inset-0 w-full h-full stroke-slate-800 fill-none pointer-events-none" style="z-index: 10;">
               <!-- Paths linking left stack coordinates to right hub -->
               <path d="M 120,42 C 200,42 180,165 240,165" class="stream-line-purple"></path>
               <path d="M 120,103 C 180,103 190,165 240,165" class="stream-line-cyan"></path>
@@ -210,7 +210,7 @@
             </svg>
 
             <!-- Right Side: Unified Lakehouse target box -->
-            <div class="flex flex-col items-center justify-center gap-4 z-20" style="margin-left: 110px;">
+            <div class="flex flex-col items-center justify-center gap-4 z-20">
               <!-- 3D cylinder database visual in CSS -->
               <div class="lakehouse-tank relative flex flex-col items-center justify-center">
                 <!-- Cylinder glass container -->
@@ -714,6 +714,6 @@
   </footer>
 
   <!-- Main JavaScript File -->
-  <script src="app.js?v=1.0.4"></script>
+  <script src="app.js?v=1.0.5"></script>
 </body>
 </html>

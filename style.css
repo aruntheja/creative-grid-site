@@ -518,6 +518,32 @@ header.header-scrolled {
   }
 }
 
+/* Hero layout positioning to prevent flex push-up overlap on mobile */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 6.5rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  #hero {
+    justify-content: center;
+    padding-top: 7rem;
+  }
+}
+
+/* Ingestion lines visibility */
+.ingestion-svg-lines {
+  display: none;
+}
+@media (min-width: 768px) {
+  .ingestion-svg-lines {
+    display: block;
+  }
+}
+
 /* Blur Filters for Background effects */
 .blur-\[80px\] { filter: blur(80px); }
 .blur-\[100px\] { filter: blur(100px); }
