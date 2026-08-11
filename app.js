@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1000);
 
   // =========================================================================
-  // 5. Contact Form Simulator & Validation
+  // 5. Contact Form Submission (Live Delivery)
   // =========================================================================
   const contactForm = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-btn');
@@ -336,20 +336,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Show loading state
       submitBtn.disabled = true;
-      submitBtn.textContent = "Transmitting to Azure Fabric CRM...";
+      submitBtn.textContent = "Sending Request...";
       alertContainer.classList.add('hidden');
 
-      // Simulate network request to Azure Web Function
-      setTimeout(() => {
+      // Send form data using fetch to FormSubmit's AJAX endpoint
+      fetch("https://formsubmit.co/ajax/support@c-grid.tech", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: "Creative Grid - New Diagnostic Workshop Request",
+          Name: name,
+          Email: email,
+          "Firm Name": firm,
+          "Core Systems": pms,
+          Message: message
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(data => {
         submitBtn.disabled = false;
         submitBtn.textContent = "Request Diagnostic Workshop";
         
         // Show success alert
-        showAlert(`Thank you, ${name}. Your request for ${firm} (utilizing ${pms}) has been logged in our secure system. One of our Legal Data Architects will contact you at ${email} within 24 hours.`, "success");
+        showAlert(`Thank you, ${name}. Your request for ${firm} has been sent successfully. One of our Legal Data Architects will contact you at ${email} within 24 hours.`, "success");
         
         // Reset form
         contactForm.reset();
-      }, 1500);
+      })
+      .catch(error => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Request Diagnostic Workshop";
+        showAlert("Failed to transmit request. Please try again or contact us directly at support@c-grid.tech.", "error");
+      });
     });
   }
 
