@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Grid | Modern Data Platforms & Generative BI for Law Firms</title>
-  <meta name="description" content="Modern Data Platform migrations to Databricks, Microsoft Fabric, and Snowflake. Tabular modeling, custom Power BI dashboards, and Medallion architecture for enterprise law firms. Unify Aderant, Elite 3E, Fulcrum, and iManage.">
-  <meta name="keywords" content="legal analytics, law firm business intelligence, modern data platforms, Databricks legal, Snowflake law firm, Azure Fabric, Medallion architecture legal, Power BI Tabular modeling, Aderant integration, Elite 3E, Fulcrum legal">
+  <title>Creative Grid | Modern Data Platform Integration for Law Firms</title>
+  <meta name="description" content="Integrate Aderant, Salesforce, Intapp Time, budgeting tools, and APIs into a unified, secure Azure Lakehouse foundation (Fabric, Databricks, Snowflake) for advanced legal analytics and AI.">
+  <meta name="keywords" content="legal data integration, law firm data platform, Databricks law firm, Fabric legal lakehouse, Snowflake law firm, Aderant integration, Salesforce legal CRM, Intapp Time integration, Medallion architecture legal">
   <meta name="author" content="Creative Grid">
   
   <!-- Favicon using clean data-URL SVG representing a grid of data nodes -->
@@ -17,11 +17,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1.0.2">
+  <link rel="stylesheet" href="style.css?v=1.0.3">
   
   <!-- OpenGraph Metadata -->
-  <meta property="og:title" content="Creative Grid | Modern Data Platforms & Generative BI for Law Firms">
-  <meta property="og:description" content="Secure, Azure-native data foundations and conversational BI built to unlock billing, practice management, and document insights for enterprise law firms.">
+  <meta property="og:title" content="Creative Grid | Modern Data Platform Integration for Law Firms">
+  <meta property="og:description" content="Secure, Azure-native data foundations that unify Salesforce, Aderant, Intapp, and custom APIs into a single source of truth for law firms.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Creative Grid">
   
@@ -32,17 +32,17 @@
     "@type": "ProfessionalService",
     "name": "Creative Grid",
     "legalName": "Creative Grid Consulting",
-    "description": "Enterprise-grade Modern Data Platforms and custom BI solutions tailored specifically for law firms, enabling AI-ready data ingestion, practice analytics, and secure client-matter intelligence environments.",
+    "description": "Enterprise-grade Modern Data Platform integration services tailored specifically for law firms, enabling unified ingestion of billing, CRM, timekeeping, and budgeting data into secure, AI-ready environments.",
     "url": "https://creativegrid.com",
     "knowsAbout": [
-      "legal analytics",
+      "legal data integration",
       "Modern Data Platforms for law firms",
-      "Databricks, Snowflake, and Microsoft Fabric migration",
+      "Databricks, Snowflake, and Microsoft Fabric ingestion pipelines",
       "Medallion data architecture (Bronze, Silver, Gold)",
-      "Power BI and Tabular semantic modeling",
-      "Aderant, Elite 3E, and Fulcrum billing integration",
-      "Generative BI and legal LLMs",
-      "iManage and NetDocuments semantic search"
+      "Aderant and Elite 3E PMS integration",
+      "Salesforce legal CRM data mapping",
+      "Intapp Time and timesheet data unification",
+      "Custom legal API development"
     ],
     "areaServed": {
       "@type": "AdministrativeArea",
@@ -88,7 +88,7 @@
       <nav class="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
         <a href="#platform" class="nav-link">Platform</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#interactive-demo" class="nav-link">GenBI Demo</a>
+        <a href="#interactive-demo" class="nav-link">Ingestion Demo</a>
         <a href="#calculator" class="nav-link">ROI Calculator</a>
         <a href="#security" class="nav-link">Security & Trust</a>
         <a href="#contact" class="nav-link-cta ml-4">Book Workshop</a>
@@ -106,7 +106,7 @@
     <div class="hidden fixed inset-0 top-[73px] bg-slate-950/95 backdrop-blur-lg z-45 flex-col p-8 gap-6 border-t border-slate-900 transition-all duration-300" id="mobile-nav">
       <a href="#platform" class="mobile-nav-link">Platform</a>
       <a href="#services" class="mobile-nav-link">Services</a>
-      <a href="#interactive-demo" class="mobile-nav-link">GenBI Demo</a>
+      <a href="#interactive-demo" class="mobile-nav-link">Ingestion Demo</a>
       <a href="#calculator" class="mobile-nav-link">ROI Calculator</a>
       <a href="#security" class="mobile-nav-link">Security & Trust</a>
       <a href="#contact" class="mobile-nav-link button-cta-mobile mt-4 text-center">Book Workshop</a>
@@ -114,93 +114,142 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden z-10" id="hero">
+  <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden z-10" id="hero">
     <!-- Grid pattern background overlay -->
     <div class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35"></div>
     
     <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center w-full">
       <!-- Hero Text -->
-      <div class="md:col-span-7 flex flex-col items-start text-left z-20">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-950/40 border border-cyan-800/50 rounded-full mb-6 animate-pulse">
+      <div class="md:col-span-6 flex flex-col items-start text-left z-20">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-950/40 border border-cyan-800/50 rounded-full mb-6">
           <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
           <span class="font-inter text-xs font-semibold text-cyan-300 uppercase tracking-wider">Enterprise Legal Data Platforms</span>
         </div>
         <h1 class="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-[1.1] mb-6">
-          The Modern Data <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Platform</span> Built for Law Firms.
+          The Data Platform Foundation for <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Enterprise AI</span>.
         </h1>
         <p class="font-inter text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed mb-8">
-          Unify billing, practice management, and document workflows into a secure, Medallion-structured lakehouse on Databricks, Fabric, or Snowflake. Eliminate the analyst bottleneck and make data instantly queryable.
+          Unify CRM, billing ledgers, timesheets, budgeting, and document workflows into a single Azure-native Medallion Lakehouse on Databricks, Fabric, or Snowflake. Clean, validated, and optimized as the secure foundation for advanced AI.
         </p>
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-          <a href="#interactive-demo" class="button-primary text-center">Try Conversational BI</a>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-4">
+          <a href="#interactive-demo" class="button-primary text-center">Simulate Data Pipelines</a>
           <a href="#calculator" class="button-secondary text-center">Calculate Estimated ROI</a>
         </div>
+        <span class="text-[11px] text-slate-500 italic">*Sources below represent an example integration structure. The Creative Grid platform connects to any custom database, ERP, PMS, or vendor API.</span>
       </div>
 
       <!-- Hero Visuals (glowing nodes connected by streams) -->
-      <div class="md:col-span-5 relative w-full h-[320px] sm:h-[400px] flex items-center justify-center z-10" id="hero-visual">
-        <div class="absolute w-64 h-64 bg-purple-500/10 rounded-full blur-[80px] -z-10 animate-pulse"></div>
-        <div class="relative w-full h-full border border-slate-800/80 bg-slate-900/40 backdrop-blur-md rounded-2xl p-6 overflow-hidden flex flex-col justify-between shadow-2xl">
+      <div class="md:col-span-6 relative w-full flex items-center justify-center z-10" id="hero-visual">
+        <div class="absolute w-72 h-72 bg-purple-500/10 rounded-full blur-[80px] -z-10 animate-pulse"></div>
+        
+        <!-- Large container for Ingestion Diagram -->
+        <div class="w-full border border-slate-800/80 bg-slate-900/40 backdrop-blur-md rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl overflow-hidden min-h-[380px] sm:min-h-[440px]">
           
-          <!-- Cyber Grid Node Network Visual -->
-          <div class="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none">
-            <!-- Node Labels & Active Connections (Static layout, animated via CSS) -->
-            <div class="flex justify-between items-start">
-              <div class="node-badge" id="node-billing">
-                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                <span>Billing System (Elite 3E/Fulcrum)</span>
-              </div>
-              <div class="node-badge" id="node-docs">
-                <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-                <span>DMS (iManage)</span>
-              </div>
-            </div>
+          <span class="text-[10px] uppercase font-mono tracking-[0.2em] text-slate-400 mb-6 block border-b border-slate-800 pb-2">Example Data Source Ingestion Streams</span>
+          
+          <div class="flex items-center justify-between gap-2 relative flex-grow py-4">
             
-            <div class="relative w-full h-24 flex items-center justify-center">
-              <!-- Central Hub -->
-              <div class="relative w-16 h-16 rounded-2xl bg-slate-950 border-2 border-cyan-500/50 flex items-center justify-center shadow-lg shadow-cyan-500/20 z-20">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-cyan-400 animate-spin-slow">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
-                </svg>
-                <!-- Pulsing outer ring -->
-                <div class="absolute inset-0 rounded-2xl border border-cyan-400 animate-ping opacity-40"></div>
+            <!-- Left Side: Source Badges -->
+            <div class="flex flex-col gap-5 z-20">
+              <div class="source-item" id="source-crm">
+                <div class="source-icon text-purple-400 bg-purple-500/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m0 0-.003-.004A3.007 3.007 0 0 1 10 15h4a3.007 3.007 0 0 1 4.019 3.717m-12.017-.002A11.95 11.95 0 0 1 12 14c2.17 0 4.207.576 5.963 1.584A6.062 6.062 0 0 1 18 18.72m-12 0v-.031c0-.225.012-.447.037-.666A11.944 11.944 0 0 1 12 3c2.17 0 4.207.576 5.963 1.584A6.062 6.062 0 0 1 18 18.72M6 18.72a3.007 3.007 0 0 1-4.019-3.717m0 0A3.007 3.007 0 0 1 6 15" />
+                  </svg>
+                </div>
+                <div class="source-info">
+                  <span class="source-title">Salesforce</span>
+                  <span class="source-meta">CRM Pipelines</span>
+                </div>
               </div>
               
-              <!-- Data streams svg overlay -->
-              <svg class="absolute inset-0 w-full h-full stroke-slate-800 fill-none" style="z-index: 10;">
-                <path d="M 50,0 Q 150,50 150,50" class="stream-line-emerald"></path>
-                <path d="M 270,0 Q 150,50 150,50" class="stream-line-purple"></path>
-                <path d="M 50,100 Q 150,50 150,50" class="stream-line-cyan"></path>
-              </svg>
-            </div>
-            
-            <div class="flex justify-between items-end">
-              <div class="node-badge" id="node-pms">
-                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                <span>PMS (Aderant/Clio)</span>
+              <div class="source-item" id="source-pms">
+                <div class="source-icon text-cyan-400 bg-cyan-500/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                </div>
+                <div class="source-info">
+                  <span class="source-title">Aderant</span>
+                  <span class="source-meta">PMS Financials</span>
+                </div>
               </div>
-              <div class="node-badge" id="node-out">
-                <span class="w-2 h-2 rounded-full bg-slate-400"></span>
-                <span>Azure Fabric (Lakehouse)</span>
+
+              <div class="source-item" id="source-time">
+                <div class="source-icon text-emerald-400 bg-emerald-500/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                </div>
+                <div class="source-info">
+                  <span class="source-title">Intapp Time</span>
+                  <span class="source-meta">Timesheet App</span>
+                </div>
+              </div>
+
+              <div class="source-item" id="source-budget">
+                <div class="source-icon text-purple-300 bg-purple-500/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v5.25C7.5 19.004 6.996 19.5 6.375 19.5h-2.25A1.125 1.125 0 0 1 3 18.375v-5.25ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125v-9.75ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v14.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                  </svg>
+                </div>
+                <div class="source-info">
+                  <span class="source-title">Budget Tools</span>
+                  <span class="source-meta">Budget APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Middle Canvas: Ingestion streams drawing lines -->
+            <svg class="absolute inset-0 w-full h-full stroke-slate-800 fill-none pointer-events-none" style="z-index: 10;">
+              <!-- Paths linking left stack coordinates to right hub -->
+              <path d="M 120,42 C 200,42 180,165 240,165" class="stream-line-purple"></path>
+              <path d="M 120,103 C 180,103 190,165 240,165" class="stream-line-cyan"></path>
+              <path d="M 120,164 C 180,164 190,165 240,165" class="stream-line-emerald"></path>
+              <path d="M 120,225 C 200,225 180,165 240,165" class="stream-line-purple"></path>
+            </svg>
+
+            <!-- Right Side: Unified Lakehouse target box -->
+            <div class="flex flex-col items-center justify-center gap-4 z-20" style="margin-left: 110px;">
+              <!-- 3D cylinder database visual in CSS -->
+              <div class="lakehouse-tank relative flex flex-col items-center justify-center">
+                <!-- Cylinder glass container -->
+                <div class="cylinder-top"></div>
+                <div class="cylinder-body">
+                  <!-- Flowing glowing core -->
+                  <div class="cylinder-core"></div>
+                  <!-- Rotating gear structure inside -->
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-cyan-400 animate-spin-slow" style="z-index: 12;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
+                  </svg>
+                </div>
+                <div class="cylinder-bottom"></div>
+                <!-- Outer ring pulsing -->
+                <div class="absolute inset-0 rounded-full border border-cyan-400/40 animate-ping" style="height: 40px; top: 50%; transform: translateY(-50%);"></div>
+              </div>
+              
+              <div class="flex flex-col items-center">
+                <span class="font-outfit font-bold text-xs text-white uppercase tracking-wider">Azure Lakehouse</span>
+                <span class="text-[9px] font-mono text-cyan-400 mt-1">Status: Synced & Clean</span>
               </div>
             </div>
           </div>
           
           <!-- Mini analytics card dashboard display -->
-          <div class="mt-auto bg-slate-950/80 border border-slate-800/80 rounded-xl p-3.5 flex items-center justify-between z-20">
+          <div class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-3.5 flex items-center justify-between z-20 mt-4">
             <div class="flex items-center gap-3">
               <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
                 </svg>
               </div>
               <div class="flex flex-col">
-                <span class="text-[10px] uppercase text-slate-400 tracking-wider">Firmwide Realization</span>
-                <span class="font-outfit font-bold text-base text-white">+4.2% acceleration</span>
+                <span class="text-[10px] uppercase text-slate-400 tracking-wider">Unification Quality</span>
+                <span class="font-outfit font-bold text-sm text-white">99.97% Sync integrity</span>
               </div>
             </div>
             <div class="text-[11px] text-emerald-400 bg-emerald-950/30 border border-emerald-800/30 px-2 py-0.5 rounded-full font-semibold">
-              Live Monitoring
+              Delta Lake Active
             </div>
           </div>
           
@@ -216,36 +265,39 @@
         Unifying the Legal Technology Ecosystem
       </h2>
       <p class="font-inter text-slate-400 max-w-2xl mx-auto">
-        Law firm data is traditionally locked inside fragmented, proprietary legacy systems. Creative Grid connects these silos into a singular, high-performance Azure Lakehouse, ensuring data is unified and clean.
+        Law firm data is traditionally locked inside fragmented, proprietary legacy database schemas and cloud APIs. Creative Grid connects these silos into a singular, high-performance Azure Lakehouse.
       </p>
     </div>
 
     <!-- Target Systems Grid -->
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-4 mb-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-4 mb-8">
       <div class="system-card">
         <span class="text-xs uppercase text-slate-500 mb-1 block">Practice Management</span>
         <span class="system-title">Aderant</span>
       </div>
       <div class="system-card">
-        <span class="text-xs uppercase text-slate-500 mb-1 block">Practice Management</span>
-        <span class="system-title">Elite 3E</span>
+        <span class="text-xs uppercase text-slate-500 mb-1 block">CRM & Pipelines</span>
+        <span class="system-title">Salesforce</span>
       </div>
       <div class="system-card">
-        <span class="text-xs uppercase text-slate-500 mb-1 block">Enterprise ERP & RCM</span>
-        <span class="system-title">Fulcrum</span>
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Timesheet App</span>
+        <span class="system-title">Intapp Time</span>
       </div>
       <div class="system-card">
-        <span class="text-xs uppercase text-slate-500 mb-1 block">Boutique PMS</span>
-        <span class="system-title">Clio</span>
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Planning & Target</span>
+        <span class="system-title">Custom Budgets</span>
       </div>
       <div class="system-card">
         <span class="text-xs uppercase text-slate-500 mb-1 block">Document Management</span>
         <span class="system-title">iManage</span>
       </div>
       <div class="system-card">
-        <span class="text-xs uppercase text-slate-500 mb-1 block">Document Management</span>
-        <span class="system-title">NetDocuments</span>
+        <span class="text-xs uppercase text-slate-500 mb-1 block">Custom Sources</span>
+        <span class="system-title">Any Vendor API</span>
       </div>
+    </div>
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <span class="text-xs text-slate-500 italic">*Any other database, ERP, document store, or SaaS API can be mapped directly using custom ingestion connectors.</span>
     </div>
 
     <!-- Platform Features Grid -->
@@ -256,9 +308,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
           </svg>
         </div>
-        <h3 class="font-outfit font-bold text-xl text-white mb-3">Unified Lakehouse Ingestion</h3>
+        <h3 class="font-outfit font-bold text-xl text-white mb-3">Custom Pipeline Ingestion</h3>
         <p class="font-inter text-slate-400 text-sm leading-relaxed">
-          Automated ELT pipelines ingest data continuously from relational billing databases, cloud APIs, and legal document storage. No more manual exports.
+          Automated ELT pipelines ingest data continuously from relational PMS tables, cloud CRM services, raw timesheet trackers, and custom files. No more manual extractions.
         </p>
       </div>
 
@@ -268,9 +320,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
           </svg>
         </div>
-        <h3 class="font-outfit font-bold text-xl text-white mb-3">Self-Healing Data Quality</h3>
+        <h3 class="font-outfit font-bold text-xl text-white mb-3">Cross-System Schema Integrity</h3>
         <p class="font-inter text-slate-400 text-sm leading-relaxed">
-          Integrated validation scripts identify data anomalies (e.g. wrong client codes or miscalculated discounts) automatically, resolving error loops before reports run.
+          Validation scripts align matter codes from Salesforce, financial IDs from Aderant, and hours from timesheets in the Silver layer, resolving structural conflicts before loading gold aggregates.
         </p>
       </div>
 
@@ -280,43 +332,43 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7C4.547 9.547 4.5 10.768 4.5 12s.047 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.092-1.209.138-2.43.138-3.662Z" />
           </svg>
         </div>
-        <h3 class="font-outfit font-bold text-xl text-white mb-3">Cloud Lakehouse Native</h3>
+        <h3 class="font-outfit font-bold text-xl text-white mb-3">Enterprise Lakehouse Native</h3>
         <p class="font-inter text-slate-400 text-sm leading-relaxed">
-          Fully native designs. Migrate and deploy workloads across Microsoft Fabric, Databricks, and Snowflake, scaling processing dynamically and reducing cloud costs by up to 40%.
+          Fully native designs. Migrate and deploy pipelines across Microsoft Fabric, Databricks, and Snowflake, scaling processing dynamically and reducing data ingestion overhead.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Conversational BI Simulator / Section 2 -->
+  <!-- Interactive Ingestion Simulator / Section 2 -->
   <section class="py-24 px-6 bg-slate-950/40 relative z-10" id="interactive-demo">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
       <!-- Info Column -->
       <div class="lg:col-span-5 text-left">
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-purple-950/40 border border-purple-800/50 rounded-full mb-6">
           <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-          <span class="font-inter text-xs font-semibold text-purple-300 uppercase tracking-wider">Generative BI Interface</span>
+          <span class="font-inter text-xs font-semibold text-purple-300 uppercase tracking-wider">Medallion Ingestion Console</span>
         </div>
         <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mb-6">
-          Generative Analytics: Answer in Seconds, Not Cycles
+          Watch Your Legal Data Medallion Pipelines Run
         </h2>
         <p class="font-inter text-slate-300 mb-6 leading-relaxed">
-          Ditch static, complex spreadsheets. Enable your managing partners, practice group heads, and billing attorneys to query data using plain language. 
+          Clean, unified schemas are the foundation of any AI solution. Our integration console runs raw entries through Bronze (Landing), Silver (Validation & Cleaning), and Gold (Aggregation & Semantic Mapping) layers.
         </p>
         <p class="font-inter text-slate-400 mb-8 text-sm leading-relaxed">
-          Select a sample question in our simulator on the right to see how the platform automatically connects billing databases, calculates metrics, and draws instant dashboards with narrative analysis.
+          Select an example ingestion pipeline on our simulator below to see how the platform connects systems, enforces data rules, maps schemas, and logs success metrics in real-time.
         </p>
         
         <!-- Question selector buttons -->
         <div class="flex flex-col gap-3 w-full" id="chat-queries-container">
           <button class="query-selector-btn active" data-query-index="0" id="btn-query-0">
-            “Show practice group realization rate vs target this year.”
+            Pipeline 1: Sync Salesforce CRM & Aderant PMS
           </button>
           <button class="query-selector-btn" data-query-index="1" id="btn-query-1">
-            “Explain the leakage in our billing cycle for Litigation.”
+            Pipeline 2: Ingest Raw Intapp Timesheets & Validate Schemas
           </button>
           <button class="query-selector-btn" data-query-index="2" id="btn-query-2">
-            “Which clients have the highest outstanding WIP vs aging AR?”
+            Pipeline 3: Merge Financial Budgets with Matter Practice Data
           </button>
         </div>
       </div>
@@ -331,7 +383,7 @@
               <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
               <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
             </div>
-            <span class="text-xs text-slate-500 font-mono">creative-grid-bi.client-portal</span>
+            <span class="text-xs text-slate-500 font-mono">creative-grid-pipeline.console</span>
             <div class="w-4"></div>
           </div>
           
@@ -344,7 +396,7 @@
           <div class="terminal-footer">
             <span class="text-purple-400 font-mono font-bold mr-2">&gt;</span>
             <div class="text-slate-400 text-sm font-mono overflow-hidden text-ellipsis whitespace-nowrap w-full" id="terminal-input-display">
-              Select a question to run query...
+              Select a pipeline to run ingestion simulation...
             </div>
             <span class="terminal-cursor"></span>
           </div>
@@ -360,7 +412,7 @@
         Specialist Capabilities for Legal Operations
       </h2>
       <p class="font-inter text-slate-400 max-w-2xl mx-auto">
-        We specialize exclusively in the legal vertical, tailoring every data pipeline to match the regulatory, financial, and relational needs of modern firms.
+        We focus exclusively on data platform engineering, mapping complex legal systems into scalable foundations that support custom dashboards, reporting, and AI search.
       </p>
     </div>
 
@@ -374,37 +426,37 @@
           Architecting robust Medallion data structures (Bronze, Silver, Gold) across Databricks, Snowflake, and Fabric inside your private cloud subscription.
         </p>
         <ul class="service-sub-list">
-          <li>Databricks, Fabric, Snowflake migration</li>
+          <li>Databricks, Fabric, Snowflake setup</li>
           <li>Medallion (Bronze/Silver/Gold) pipelines</li>
-          <li>Zero-Trust ingestion & mapping</li>
+          <li>Zero-Trust secure ingestion pipelines</li>
         </ul>
       </div>
 
       <!-- Service 2 -->
       <div class="service-pill-card">
         <div class="service-number text-purple-400 border-purple-500/30">02</div>
-        <h3 class="font-outfit font-bold text-xl text-white mb-4">Revenue Cycle Dashboards</h3>
+        <h3 class="font-outfit font-bold text-xl text-white mb-4">Unified Legal Data Models</h3>
         <p class="font-inter text-slate-400 text-sm leading-relaxed mb-6">
-          Unlocking billing visibility. Track realization, utilization, WIP, and AR using custom Tabular modeling and high-performance Power BI semantic layers.
+          Unlocking billing visibility. Merging Aderant financial structures, Salesforce pipelines, and Timesheet files using custom Tabular modeling and unified data layers.
         </p>
         <ul class="service-sub-list">
-          <li>Power BI & Tabular semantic modeling</li>
-          <li>Fee earner realization metrics</li>
-          <li>WIP and Aging AR models</li>
+          <li>Custom Tabular semantic modeling</li>
+          <li>Cross-system WIP, billing, & marketing models</li>
+          <li>Integrated practice metric definitions</li>
         </ul>
       </div>
 
       <!-- Service 3 -->
       <div class="service-pill-card">
         <div class="service-number text-emerald-400 border-emerald-500/30">03</div>
-        <h3 class="font-outfit font-bold text-xl text-white mb-4">Generative AI Enablement</h3>
+        <h3 class="font-outfit font-bold text-xl text-white mb-4">AI-Ready Data Foundations</h3>
         <p class="font-inter text-slate-400 text-sm leading-relaxed mb-6">
-          Deploying private legal LLM layers to query practice databases, summarize dockets, and enable semantic lookup across document ecosystems.
+          Deploying vector datastores, preparing clean text chunking, and implementing logical ethical wall constraints to support secure corporate downstream RAG and search.
         </p>
         <ul class="service-sub-list">
-          <li>Conversational analytics</li>
-          <li>Secure Azure OpenAI wrappers</li>
-          <li>UniCourt API ingestion</li>
+          <li>Ethical walls data protection rules</li>
+          <li>Embedding pipelines for document libraries</li>
+          <li>Matter-centric metadata structures</li>
         </ul>
       </div>
 
@@ -413,12 +465,12 @@
         <div class="service-number text-cyan-400 border-cyan-500/30">04</div>
         <h3 class="font-outfit font-bold text-xl text-white mb-4">Secure Systems Migration</h3>
         <p class="font-inter text-slate-400 text-sm leading-relaxed mb-6">
-          Seamlessly translating legacy PMS databases to modern formats. Completely mapped, tested, and executed with zero business disruption.
+          Seamlessly translating legacy database schemas to modern cloud formats. Completely mapped, tested, and executed with zero business disruption.
         </p>
         <ul class="service-sub-list">
           <li>PMS-to-PMS transitions</li>
           <li>Data integrity validation</li>
-          <li>Historical data preservation</li>
+          <li>Historical data schema mapping</li>
         </ul>
       </div>
 
@@ -506,7 +558,7 @@
                 <div>
                   <span class="text-xs text-slate-500 block uppercase tracking-wider mb-1">Total Billable Hours Recovered</span>
                   <div class="flex items-baseline gap-2">
-                    <span class="font-outfit font-bold text-3xl text-cyan-400" id="output-hours-recovered">10,800</span>
+                     <span class="font-outfit font-bold text-3xl text-cyan-400" id="output-hours-recovered">10,800</span>
                     <span class="text-xs text-slate-400">hours / year</span>
                   </div>
                 </div>
@@ -545,14 +597,14 @@
         Ironclad Compliance. Deployed in Your Azure Tenant.
       </h2>
       <p class="font-inter text-slate-300 max-w-3xl leading-relaxed mb-12">
-        We respect the strict constraints of client confidentiality. Creative Grid never copies or transfers your data to an external server. The entire Modern Data Platform, including AI endpoints, is deployed <strong class="text-cyan-400">natively inside your firm’s private Microsoft Azure subscription</strong>.
+        We respect the strict constraints of client confidentiality. Creative Grid never copies or transfers your data to an external server. The entire Modern Data Platform, including integration code and storage endpoints, is deployed <strong class="text-cyan-400">natively inside your firm’s private Microsoft Azure subscription</strong>.
       </p>
 
       <div class="grid sm:grid-cols-3 gap-8 w-full max-w-5xl">
         <div class="p-6 border border-slate-900 bg-slate-950/40 rounded-xl text-left">
           <h3 class="font-outfit font-bold text-lg text-white mb-2">Ethical Wall Compliance</h3>
           <p class="font-inter text-slate-400 text-xs leading-relaxed">
-            Data security partitions are enforced at the pipeline level, ensuring practice-specific document libraries and matters respect existing logical ethical walls.
+            Data security partitions are enforced at the pipeline mapping level, ensuring practice-specific files and matters respect existing logical ethical walls.
           </p>
         </div>
         <div class="p-6 border border-slate-900 bg-slate-950/40 rounded-xl text-left">
@@ -562,9 +614,9 @@
           </p>
         </div>
         <div class="p-6 border border-slate-900 bg-slate-950/40 rounded-xl text-left">
-          <h3 class="font-outfit font-bold text-lg text-white mb-2">Zero Model Leakage</h3>
+          <h3 class="font-outfit font-bold text-lg text-white mb-2">Zero Data Exposure</h3>
           <p class="font-inter text-slate-400 text-xs leading-relaxed">
-            Your conversational BI uses secure Azure OpenAI instances. Your intellectual property, contract templates, and billing details are never used to train public models.
+            Your client matters, budgets, and financial ledgers remain completely isolated. Data is mapped inside secure database instances and is never shared outside your environment.
           </p>
         </div>
       </div>
@@ -578,7 +630,7 @@
         Ready to Unify Your Firm’s Data?
       </h2>
       <p class="font-inter text-slate-400 mb-12">
-        Schedule a diagnostic call to map your current data structures (Aderant, Elite 3E, Fulcrum, etc.) and explore your path to an Azure Modern Data Platform.
+        Schedule a diagnostic call to map your current data structures (Aderant, Elite 3E, Salesforce, Intapp, etc.) and explore your path to an Azure Modern Data Platform.
       </p>
 
       <!-- Glassmorphic Form -->
@@ -604,13 +656,13 @@
           </div>
           <!-- Primary Practice Management System -->
           <div class="flex flex-col">
-            <label for="contact-pms" class="text-xs text-slate-400 mb-2 font-medium">Current Billing / PMS System</label>
+            <label for="contact-pms" class="text-xs text-slate-400 mb-2 font-medium">Current Core Systems</label>
             <select id="contact-pms" class="form-input text-slate-300">
-              <option value="Elite 3E">Elite 3E</option>
-              <option value="Aderant">Aderant</option>
-              <option value="Fulcrum">Fulcrum (SAP)</option>
-              <option value="Clio">Clio</option>
-              <option value="Other">Other / Multiple</option>
+              <option value="Aderant & Salesforce">Aderant + Salesforce</option>
+              <option value="Elite 3E & Salesforce">Elite 3E + Salesforce</option>
+              <option value="Aderant & Intapp">Aderant + Intapp Time</option>
+              <option value="Fulcrum & Others">Fulcrum (SAP) + Others</option>
+              <option value="Other">Other / Multiple Custom Sources</option>
             </select>
           </div>
         </div>
@@ -618,7 +670,7 @@
         <!-- Notes / Message -->
         <div class="flex flex-col">
           <label for="contact-message" class="text-xs text-slate-400 mb-2 font-medium">How can we help your firm?</label>
-          <textarea id="contact-message" rows="4" class="form-input resize-none" placeholder="Briefly describe your data objectives or legacy system challenges..."></textarea>
+          <textarea id="contact-message" rows="4" class="form-input resize-none" placeholder="Briefly describe your data objectives or legacy system integration challenges..."></textarea>
         </div>
 
         <!-- Submit Button -->
@@ -662,6 +714,6 @@
   </footer>
 
   <!-- Main JavaScript File -->
-  <script src="app.js?v=1.0.2"></script>
+  <script src="app.js?v=1.0.3"></script>
 </body>
 </html>

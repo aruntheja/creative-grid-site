@@ -387,25 +387,113 @@ header.header-scrolled {
 /* =========================================================================
    6. Hero Network & Visual FX (Pulsing, Blurs, SVG Streams)
    ========================================================================= */
-.node-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 500;
-  background-color: rgba(15, 23, 42, 0.8);
-  border: 1px solid var(--border-slate-800);
-  padding: 0.35rem 0.6rem;
-  border-radius: 0.5rem;
-  color: var(--text-primary);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+.min-h-\[380px\] { min-height: 380px; }
+@media (min-width: 640px) {
+  .sm\:min-h-\[440px\] { min-height: 440px; }
 }
 
-#node-billing:hover { border-color: var(--accent-emerald); }
-#node-docs:hover { border-color: var(--accent-purple); }
-#node-pms:hover { border-color: var(--accent-cyan); }
+/* Source Ingestion Row Item */
+.source-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-slate-800);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  width: 170px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+.source-item:hover {
+  transform: translateX(3px);
+  border-color: var(--accent-cyan);
+  background-color: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.15);
+}
+.source-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.source-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.source-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+.source-meta {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+}
+
+/* 3D Lakehouse Cylinder */
+.lakehouse-tank {
+  width: 90px;
+  height: 140px;
+  position: relative;
+}
+.cylinder-top {
+  width: 90px;
+  height: 20px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1.5px solid var(--border-cyan-500);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 15;
+}
+.cylinder-body {
+  width: 90px;
+  height: 110px;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9));
+  border-left: 1.5px solid var(--border-cyan-500);
+  border-right: 1.5px solid var(--border-cyan-500);
+  position: absolute;
+  top: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.cylinder-core {
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.15), transparent);
+  filter: blur(8px);
+  position: absolute;
+  top: 0;
+  animation: cylinderFlow 4s linear infinite;
+  z-index: 11;
+}
+.cylinder-bottom {
+  width: 90px;
+  height: 20px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border-left: 1.5px solid var(--border-cyan-500);
+  border-right: 1.5px solid var(--border-cyan-500);
+  border-bottom: 1.5px solid var(--border-cyan-500);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  z-index: 15;
+}
+
+@keyframes cylinderFlow {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
 
 /* SVG Data Streams styling */
 .stream-line-cyan, .stream-line-purple, .stream-line-emerald {

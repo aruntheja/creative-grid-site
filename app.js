@@ -104,60 +104,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. Conversational BI Terminal Simulator
+  // 4. Medallion Ingestion Pipeline Simulator
   // =========================================================================
-  const chatQueries = [
+  const pipelineSequences = [
     {
-      query: "Show practice group realization rate vs target this year.",
+      query: "Salesforce CRM & Aderant PMS Ingestion Stream",
       steps: [
-        { text: "Connecting to Medallion Gold Lakehouse (Azure Fabric / Databricks Delta Lake)...", type: "system" },
-        { text: "Querying cached Power BI Tabular semantic models (joining Aderant, Elite 3E, and Fulcrum mappings)...", type: "system" },
-        { text: "Calculating realization ratios (fees collected / billable hours logged at standard rate)...", type: "system" },
-        { text: "Here is the comparative practice group realization chart:", type: "bot" },
+        { text: "Connecting to secure Salesforce API & Aderant PMS financial database...", type: "system" },
+        { text: "BRONZE: Extracting 2,450 CRM account rows and landing raw Delta tables in private Azure tenant...", type: "system" },
+        { text: "SILVER: Enforcing schema validation. Mapping Salesforce Billing IDs to Aderant client master keys (resolved 12 unmapped IDs). Applying practice-specific ethical walls...", type: "system" },
+        { text: "GOLD: Aggregating business development pipelines against actual billed hours. Materializing Gold ledger schemas...", type: "system" },
+        { text: "Ingestion and validation pipeline completed successfully. Data synchronized:", type: "bot" },
         {
           type: "chart",
           data: [
-            { label: "IP & Patent", val: 95.1, target: 93, color: "fill-cyan" },
-            { label: "Litigation", val: 94.2, target: 92, color: "fill-emerald" },
-            { label: "Corporate", val: 91.5, target: 94, color: "fill-purple" },
-            { label: "Real Estate", val: 87.8, target: 90, color: "fill-purple" }
+            { label: "Salesforce CRM", val: 2450, maxVal: 12800, unit: " rows", color: "fill-purple" },
+            { label: "Aderant PMS", val: 12800, maxVal: 12800, unit: " rows", color: "fill-cyan" }
           ]
         },
-        { text: "<strong>Key Insight:</strong> The Litigation group is outperforming its target by 2.2% following the Medallion Silver-to-Gold pipeline migration. Real Estate shows a 2.2% realization deficit, primarily due to delayed client invoicing structures.", type: "bot" }
+        { text: "<strong>Lakehouse Status:</strong> Ingestion sync at 100% integrity. Unified Client-Matter dataset is now structured and ready for advanced analytics and secure down-stream search.", type: "bot" }
       ]
     },
     {
-      query: "Explain the leakage in our billing cycle for Litigation.",
+      query: "Intapp Timesheet Queue Ingestion & Validation",
       steps: [
-        { text: "Scanning Databricks Bronze-zone raw RCM ingestion logs...", type: "system" },
-        { text: "Correlating active Snowflake billing cache records with final Gold-ledger collections profiles...", type: "system" },
-        { text: "Write-down leakage categories identified for Litigation:", type: "bot" },
+        { text: "Querying Intapp Time REST API queue for pending fee-earner logs...", type: "system" },
+        { text: "BRONZE: Ingesting 840 raw timesheet records. Landing raw timecard payloads in Bronze staging zone...", type: "system" },
+        { text: "SILVER: Matching timekeeper IDs against active employee rosters. Mapping active matter references. Flagged 3 timesheet outlier entries (> 16 billable hours/day) for partner approval...", type: "system" },
+        { text: "GOLD: Aggregating daily billable hours, fee realization ratios, and practice group utilization rates. Loading into Gold-zone analytics schemas...", type: "system" },
+        { text: "Pipeline run complete. Ingested records mapped:", type: "bot" },
         {
           type: "chart",
           data: [
-            { label: "Late Entries", val: 182, target: 200, unit: "k", color: "fill-purple" },
-            { label: "Cycle Delays", val: 94, target: 120, unit: "k", color: "fill-cyan" },
-            { label: "Mismatched Codes", val: 63, target: 80, unit: "k", color: "fill-emerald" }
+            { label: "Synced Records", val: 837, maxVal: 840, unit: " entries", color: "fill-emerald" },
+            { label: "Flagged (Review)", val: 3, maxVal: 840, unit: " entries", color: "fill-purple" }
           ]
         },
-        { text: "<strong>Actionable Deficit:</strong> Late timecard entries (submitted 48+ hours post-work) represent the highest write-down factor ($182K). Standardizing automated timekeeper alerts within the Tabular model can reduce this leakage by up to $145K annually.", type: "bot" }
+        { text: "<strong>Lakehouse Status:</strong> Raw timesheets successfully processed and aligned with Aderant matter masters. 3 entries routed to dashboard exception queue for partner review.", type: "bot" }
       ]
     },
     {
-      query: "Which clients have the highest outstanding WIP vs aging AR?",
+      query: "Partner Budgets & Goal Allocations Merging",
       steps: [
-        { text: "Querying Snowflake Gold-zone client ledger views...", type: "system" },
-        { text: "Retrieving active client account profiles from DirectLake cache...", type: "system" },
-        { text: "Ledger imbalance alerts (outstanding WIP / 60+ Days AR):", type: "bot" },
+        { text: "Polling secure Azure Blob Storage for latest partner budget spreadsheets...", type: "system" },
+        { text: "BRONZE: Loading 240 target allocation Excel files. Landing raw table states in budget_bronze Delta ledger...", type: "system" },
+        { text: "SILVER: Parsing workbook structures. Standardizing currency indicators (USD/NZD/GBP exchange rates). Enforcing integrity constraints and mapping partner codes...", type: "system" },
+        { text: "GOLD: Joining budget allocations with active Aderant partner assignment histories. Rebuilding budget-variance Gold ledger view...", type: "system" },
+        { text: "Financial target database update finished. Datasets integrated:", type: "bot" },
         {
           type: "chart",
           data: [
-            { label: "Apex Holdings", val: 240, target: 250, unit: "k", color: "fill-purple" },
-            { label: "BioTech Ltd", val: 150, target: 180, unit: "k", color: "fill-cyan" },
-            { label: "Sterling Trust", val: 95, target: 100, unit: "k", color: "fill-emerald" }
+            { label: "Target Budgets", val: 240, maxVal: 240, unit: " files", color: "fill-cyan" },
+            { label: "Assigned Partners", val: 120, maxVal: 240, unit: " codes", color: "fill-emerald" }
           ]
         },
-        { text: "<strong>Warning:</strong> Apex Holdings has $240K in Work-in-Progress (WIP) that has not been converted to invoices. This is currently delayed in the Fulcrum SAP billing workflow awaiting client code verification.", type: "bot" }
+        { text: "<strong>Lakehouse Status:</strong> Target budgeting allocations are now unified with live matter billing histories. Variance reports and partner metrics are fully populated.", type: "bot" }
       ]
     }
   ];
@@ -174,24 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function appendSystemMessage(text) {
     const el = document.createElement('div');
-    el.className = 'chat-message chat-bot font-mono text-xs opacity-70 border-l border-slate-700 bg-slate-900/10';
-    el.innerHTML = `[sys] ${text}`;
+    el.className = 'chat-message chat-bot font-mono text-xs opacity-75 border-l-2 border-cyan-500 bg-slate-900/10';
+    el.innerHTML = `[pipeline] ${text}`;
     terminalChatBody.appendChild(el);
     terminalChatBody.scrollTop = terminalChatBody.scrollHeight;
   }
 
   function appendBotMessage(text) {
     const el = document.createElement('div');
-    el.className = 'chat-message chat-bot';
-    el.innerHTML = text;
+    el.className = 'chat-message chat-bot border-l-2 border-emerald-500 bg-emerald-950/5';
+    el.innerHTML = `[success] ${text}`;
     terminalChatBody.appendChild(el);
     terminalChatBody.scrollTop = terminalChatBody.scrollHeight;
   }
 
   function appendUserMessage(text) {
     const el = document.createElement('div');
-    el.className = 'chat-message chat-user';
-    el.textContent = text;
+    el.className = 'chat-message chat-user font-mono text-xs border-l-2 border-purple-500 bg-slate-900/10';
+    el.innerHTML = `&gt; Starting Pipeline: ${text}`;
     terminalChatBody.appendChild(el);
     terminalChatBody.scrollTop = terminalChatBody.scrollHeight;
   }
@@ -221,8 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       container.querySelectorAll('.chart-bar-fill').forEach((bar, idx) => {
         const item = chartData[idx];
-        // Calculate max scale percentage
-        const maxVal = Math.max(...chartData.map(d => d.val));
+        const maxVal = item.maxVal || Math.max(...chartData.map(d => d.val));
         const fillPercentage = (item.val / maxVal) * 100;
         bar.style.width = `${fillPercentage}%`;
       });
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(interval);
         setTimeout(callback, 300);
       }
-    }, 30);
+    }, 15);
   }
 
   // Execute terminal query sequences
@@ -251,21 +251,22 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Deactivate all query selector buttons
     queryButtons.forEach(btn => btn.classList.remove('active'));
+    
     // Activate clicked button
     const activeBtn = document.getElementById(`btn-query-${index}`);
     if (activeBtn) activeBtn.classList.add('active');
 
-    const queryData = chatQueries[index];
+    const queryData = pipelineSequences[index];
     
     clearChat();
 
-    // Type the question in the terminal input bar
-    typeInputText(queryData.query, () => {
-      // Add the User chat bubble
+    // Type the command in the terminal input bar
+    typeInputText(`sh run_pipeline --name "${queryData.query}"`, () => {
+      // Add the User pipeline trigger message
       appendUserMessage(queryData.query);
       
       // Return input display to neutral state
-      terminalInputDisplay.textContent = "Select a question to run query...";
+      terminalInputDisplay.textContent = "Select a pipeline to run ingestion simulation...";
 
       // Play steps with deliberate delays to simulate calculations
       let stepIdx = 0;
