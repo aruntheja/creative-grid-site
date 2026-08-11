@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 2. Scroll Animation Observer (Fade In Elements)
   // =========================================================================
+  // Add js-enabled class to body for progressive enhancement animations
+  document.body.classList.add('js-enabled');
+
+  // Apply animated classes to page elements for sleek scroll appearance
+  document.querySelectorAll('section > div').forEach(el => {
+    el.classList.add('reveal-fade-up');
+  });
+
   const animatedElements = document.querySelectorAll('.reveal-fade-up');
   
   const observerOptions = {
@@ -56,11 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animatedElements.forEach(el => {
     observer.observe(el);
-  });
-
-  // Apply animated classes to page elements for sleek scroll appearance
-  document.querySelectorAll('section > div').forEach(el => {
-    el.classList.add('reveal-fade-up');
   });
 
   // =========================================================================
