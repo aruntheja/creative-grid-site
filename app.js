@@ -339,21 +339,23 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.textContent = "Sending Request...";
       alertContainer.classList.add('hidden');
 
-      // Send form data using fetch to FormSubmit's AJAX endpoint
+      // Send form data using FormData to FormSubmit's AJAX endpoint
+      const formData = new FormData();
+      formData.append("_subject", "Creative Grid - New Diagnostic Workshop Request");
+      formData.append("_cc", "aruntheja@gmail.com");
+      formData.append("_template", "table");
+      formData.append("Name", name);
+      formData.append("Email", email);
+      formData.append("Firm_Name", firm);
+      formData.append("Core_Systems", pms);
+      formData.append("Message", message || "N/A");
+
       fetch("https://formsubmit.co/ajax/476f4cbd2e4d15e13408be28ba546d90", {
         method: "POST",
         headers: { 
-          'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          _subject: "Creative Grid - New Diagnostic Workshop Request",
-          Name: name,
-          Email: email,
-          "Firm Name": firm,
-          "Core Systems": pms,
-          Message: message
-        })
+        body: formData
       })
       .then(response => {
         if (response.ok) {
@@ -362,6 +364,9 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error('Network response was not ok.');
       })
       .then(data => {
+        if (data.success === "false" || data.success === false) {
+          throw new Error(data.message || 'Submission failed.');
+        }
         submitBtn.disabled = false;
         submitBtn.textContent = "Request Diagnostic Workshop";
         
