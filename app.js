@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alertContainer.classList.add('hidden');
 
       // Send form data using fetch to FormSubmit's AJAX endpoint
-      fetch("https://formsubmit.co/ajax/support@c-grid.tech", {
+      fetch("https://formsubmit.co/ajax/476f4cbd2e4d15e13408be28ba546d90", {
         method: "POST",
         headers: { 
           'Content-Type': 'application/json',
